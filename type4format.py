@@ -135,10 +135,10 @@ class Type4scrappers():
         #     driver.execute_script("arguments[0].click();",selectbutton)
             # selctlist.select_by_visible_text(selctlist.options[0].text)
         
-        if platform.system()=='Windows':
-            actions.key_down(Keys.CONTROL).send_keys('a').key_up(Keys.CONTROL).perform()
-        else:
+        if platform.system() == 'Darwin':  # Mac OS
             actions.key_down(Keys.COMMAND).send_keys('a').key_up(Keys.COMMAND).perform()
+        else:  # Windows or Linux
+            actions.key_down(Keys.CONTROL).send_keys('a').key_up(Keys.CONTROL).perform()
 
 
         button = driver.find_element(By.CSS_SELECTOR,"input[value='Class Search']")
