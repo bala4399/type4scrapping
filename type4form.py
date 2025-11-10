@@ -19,7 +19,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 # from browsermobproxy import Server
 options = Options()
-options.add_argument("--headless")
+options.add_argument("--headless=false")
 options.set_capability('goog:loggingPrefs', {'performance': 'ALL'}) 
 # import undetected_chromedriver as uc 
 driver = webdriver.Chrome(options=options)
@@ -35,7 +35,7 @@ class Type4scrappers():
         # Extract the year
         self.current_year = current_time.year
 
-    async def mainscrapper(self):
+    def mainscrapper(self):
         try:
             driver.get(self.url)
             time.sleep(2)
@@ -67,7 +67,6 @@ class Type4scrappers():
                 else:
                     print("problem")
                 for idx in range(len(rowdata)):
-
                     print(idx)
                     try:
                         dictData = {"Cengage Master Institution ID":self.id,'Source URL':self.url,'Course Name': " ","Course Description":"","Class Number":"","Section":"","Instructor":"","Enrollment":"","Course Dates":"","Location":"","Textbook/Course Materials":""}
