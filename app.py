@@ -7,7 +7,7 @@ def mainScrapper():
     try:
         with open("type4links.json", "r") as f: 
             data = json.load(f) 
-
+        
         for key,value in data.items():
             scraper = Type4scrappers(key,value)   
             asyncio.run(scraper.mainscrapper())
