@@ -47,8 +47,6 @@ class Type4scrappers():
                 if opt!=0:
                     driver.get(self.url)
                     time.sleep(2)
-                if opt==3:
-                    break
                 Selectlist = driver.find_element(By.CSS_SELECTOR,"select[name='p_term']")  
                 Selectlist = Select(Selectlist)
                 options = Selectlist.options
@@ -69,8 +67,6 @@ class Type4scrappers():
                 else:
                     print("problem")
                 for idx in range(len(rowdata)):
-                    if idx==10:
-                        break
                     print(idx)
                     try:
                         dictData = {"Cengage Master Institution ID":self.id,'Source URL':self.url,'Course Name': " ","Course Description":"","Class Number":"","Section":"","Instructor":"","Enrollment":"","Course Dates":"","Location":"","Textbook/Course Materials":""}
