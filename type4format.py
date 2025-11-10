@@ -19,6 +19,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 # from browsermobproxy import Server
 options = Options()
+options.add_argument("--headless=false")
 options.set_capability('goog:loggingPrefs', {'performance': 'ALL'}) 
 # import undetected_chromedriver as uc 
 driver = webdriver.Chrome(options=options)
